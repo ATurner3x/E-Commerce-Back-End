@@ -11,14 +11,16 @@ USE ecommerce_db;
 -- Create Category table
 CREATE TABLE category (
   id INTEGER PRIMARY KEY AUTO_INCREMENT,
-  name VARCHAR(255)
+  category_name VARCHAR(255)
 );
 
 -- Create Product table
 CREATE TABLE product (
   id INTEGER PRIMARY KEY AUTO_INCREMENT,
   name VARCHAR(255) NOT NULL,
-  price DECIMAL(10, 2) NOT NULL
+  price DECIMAL(10, 2) NOT NULL,
+  category_id INTEGER,
+  FOREIGN KEY (category_id) REFERENCES category(id)
 );
 
 -- Create Tag table
