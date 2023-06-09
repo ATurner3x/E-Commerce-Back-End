@@ -15,5 +15,7 @@ const sequelize = require('./config/connection');
 sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
+    
   });
 });
+
