@@ -33,4 +33,8 @@ Product.init(
   }
 );
 
+//create associations
+Product.belongsToMany(Tag, { through: 'product_tag', foreignKey: 'product_id' });
+Tag.belongsToMany(Product, { through: 'product_tag', foreignKey: 'tag_id' });
+
 module.exports = Product;

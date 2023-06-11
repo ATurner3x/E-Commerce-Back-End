@@ -17,6 +17,7 @@ Tag.init(
       allowNull: false,
       defaultValue: 'New Tag',
     },
+    
   },
   {
     sequelize,

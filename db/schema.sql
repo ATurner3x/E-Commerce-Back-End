@@ -10,8 +10,9 @@ USE ecommerce_db;
 -- Create Category table
 CREATE TABLE category (
   id INTEGER PRIMARY KEY AUTO_INCREMENT,
-  category_name VARCHAR(255)
+  category_name VARCHAR(255) NOT NULL
 );
+
 
 -- Create Product table
 CREATE TABLE product (
@@ -25,7 +26,7 @@ CREATE TABLE product (
 -- Create Tag table
 CREATE TABLE tag (
   id INTEGER PRIMARY KEY AUTO_INCREMENT,
-  tag_name VARCHAR(255) NOT NULL
+  name VARCHAR(255) NOT NULL
 );
 
 -- Create ProductTag table
