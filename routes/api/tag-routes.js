@@ -51,11 +51,38 @@ router.post('/', (req, res) => {
 });
 
 router.put('/:id', (req, res) => {
+  try {
   // update a tag's name by its `id` value
+  const tag = await Tag.update(req.body, {
+    where: { id: req.params.id }
+  });
+  if (!tag[0]) {
+    res.status(404).json({ message: 'Tag not found' });
+    return;
+  }
+  res.json({ message: 'Tag updated successfully' });
+} catch (err) {
+  console.error(err);
+  res.status(500).json(err);
+}
 });
 
+
 router.delete('/:id', (req, res) => {
-  // delete on tag by its `id` value
+  try {
+    // delete a tag by its `id` value
+    const tag = await Tag.destroy({
+      where: { id: req.params.id }
+    });
+    if (!tag) {
+      res.status(404).json({ message: 'Tag not found' });
+      return;
+    }
+    res.json({ message: 'Tag deleted successfully' });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json(err);
+  }
 });
 
 module.exports = router;
