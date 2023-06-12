@@ -5,7 +5,7 @@ const { Tag, Product, ProductTag } = require('../../models');
 
 
 
-router.get('/', (req, res) => {
+router.get('/', async (req, res) => {
   try {
   // find all tags
   // be sure to include its associated Product data
@@ -19,7 +19,7 @@ res.json(tags);
   }
 });
 
-router.get('/:id', (req, res) => {
+router.get('/:id', async (req, res) => {
   try {
   // find a single tag by its `id`
   // be sure to include its associated Product data
@@ -39,7 +39,7 @@ res.status(500).json(err);
 
 
 
-router.post('/', (req, res) => {
+router.post('/', async (req, res) => {
   try {
   // create a new tag
   const tag = await Tag.create(req.body);
@@ -50,7 +50,7 @@ router.post('/', (req, res) => {
 }
 });
 
-router.put('/:id', (req, res) => {
+router.put('/:id', async (req, res) => {
   try {
   // update a tag's name by its `id` value
   const tag = await Tag.update(req.body, {
@@ -68,7 +68,7 @@ router.put('/:id', (req, res) => {
 });
 
 
-router.delete('/:id', (req, res) => {
+router.delete('/:id', async (req, res) => {
   try {
     // delete a tag by its `id` value
     const tag = await Tag.destroy({
