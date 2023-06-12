@@ -40,7 +40,14 @@ res.status(500).json(err);
 
 
 router.post('/', (req, res) => {
+  try {
   // create a new tag
+  const tag = await Tag.create(req.body);
+  res.status(201).json(tag);
+} catch (err) {
+  console.error(err);
+  res.status(500).json(err);
+}
 });
 
 router.put('/:id', (req, res) => {
