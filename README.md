@@ -32,21 +32,11 @@ use 'node server.js' in the terminal to start the local server
 
 This project is licensed under the **MIT** license. See the [LICENSE](LICENSE) file for more information.
 
-## Contributing
 
-
-
-## Tests
-
-To run tests, use the following command:
-
-```
-
-```
 
 ## Questions
 
-If you have any questions about the repository, feel free to [open an issue](https://github.com/ATurner3x/E-Commerce Back End/issues) or contact me directly at [A.Tuner3x@gmail.com](mailto:A.Tuner3x@gmail.com). You can find more of my work on [GitHub](https://github.com/ATurner3x/).
+If you have any questions about the repository, feel free to [open an issue](https://github.com/ATurner3x/E-CommerceBackEnd/issues) or contact me directly at [A.Tuner3x@gmail.com](mailto:A.Tuner3x@gmail.com). You can find more of my work on [GitHub](https://github.com/ATurner3x/).
 
 --- 
 
