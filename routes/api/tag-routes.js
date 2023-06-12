@@ -12,17 +12,32 @@ router.get('/', (req, res) => {
   const tags = await Tag.findAll({
     include: [Product]
 });
-
-router.get('/:id', (req, res) => {
-  // find a single tag by its `id`
-  // be sure to include its associated Product data
-});
 res.json(tags);
   } catch (err) {
     console.error(err);
     res.status(500).json(err);
   }
 });
+
+router.get('/:id', (req, res) => {
+  try {
+  // find a single tag by its `id`
+  // be sure to include its associated Product data
+  const tag = await Tag.findByPk(req.params.id, {
+    include: [Product]
+});
+if (!tag) {
+  res.status(404).json({ message: 'Tag not found' });
+  return;
+}
+res.json(tag);
+} catch (err) {
+console.error(err);
+res.status(500).json(err);
+}
+});
+
+
 
 router.post('/', (req, res) => {
   // create a new tag
